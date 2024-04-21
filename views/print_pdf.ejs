@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .logo {
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .large {
+            font-size: 1.2em;
+        }
+
+        .total {
+            color: #fb7578;
+        }
+
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo text-center">
+            <h2>Print!</h2>
+        </div>
+        
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td><%= bill.name %></td>
+            </tr>
+        </table>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Education</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><%= bill.Educ %></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <table>
+            <tr>
+                <th>Projects</th>
+            </tr>
+            <tr>
+                <td class="large"><%= bill.Projects %></td>
+            </tr>
+        </table>
+        
+        <div class="footer">
+            <p class="total">Thank you!</p>
+        </div>
+        
+        <!-- Button to print the page -->
+        <button onclick="window.print()">Print</button>
+    </div>
+</body>
+</html>

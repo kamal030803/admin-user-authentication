@@ -1,0 +1,45 @@
+<% layout('layout/boiler_plate')%>
+
+<style>
+    body {
+        background-color: #76c5ef; /* Change to your desired color */
+    }
+
+    .content-container {
+        margin: 0 auto;
+        max-width: 800px; /* Adjust as needed */
+        padding: 20px;
+        background-color: #ffffff; /* Change to your desired color */
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a box shadow */
+    }
+
+    .job {
+        list-style: disc;
+        padding: 8px 20px;
+        width: auto;
+        text-align: left;
+        list-style-position: inside;
+    }
+</style>
+
+
+<br>
+<h1>Welcome to <%=currentUser.user_type%> view</h1>
+<br>
+<div class="text-center content-container">
+    <ul class="job">
+        <p>The <%=currentUser.user_type%> can:</p>
+        <% if (currentUser.user_type == "Admin"){ %>
+        <li class="job">View Users</li>
+        <!-- <li class="job">View Inventory</li> -->
+        <li class="job">Update Users</li>
+        <% } %>
+        <% if (currentUser.user_type == "User"){ %>
+        <li class="job">Create resume pdfs</li>
+        <% } %>
+        <!-- <% if (currentUser.user_type == "Staff"){ %>
+        <li class="job">Update items in inventory</li>
+        <% } %> -->
+    </ul>
+</div>
